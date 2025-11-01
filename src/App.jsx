@@ -2,17 +2,15 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 const SUBTEXTS = [
-  "I'm sad now",
-  "But I wish it was",
+  "Should we stay in lockdown forever?",
   "But it'd be pretty cool if it were",
   "#tipofthespear",
   "But did you finish your CJA?",
-  "Gateway to dominance baby",
+  "But gateway to dominance",
   "Unless…",
-  "Say it ain't so",
-  "Back to work Paul",
+  "Please",
+  "Back to work",
   "But could be the move?",
-  "Should we stay in lockdown forever?",
 ]
 
 function App() {
