@@ -1,5 +1,6 @@
 #root {
   height: 100vh;
+  height: 100dvh; /* Dynamic viewport height for mobile browsers */
   width: 100%;
 }
 
@@ -12,6 +13,8 @@
   align-items: center;
   font-size: 288px;
   font-weight: bold;
+  text-align: center;
+  overflow: hidden;
 }
 
 .content {
@@ -20,6 +23,7 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
+  text-align: center;
 }
 
 .subtext {
