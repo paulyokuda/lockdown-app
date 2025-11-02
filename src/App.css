@@ -39,3 +39,51 @@
     transform: rotate(360deg);
   }
 }
+
+/* Mobile styles - phones */
+@media (max-width: 640px) {
+  .container {
+    font-size: 96px; /* Down from 288px */
+    padding: 20px;
+  }
+
+  .loading {
+    font-size: 64px; /* Down from 96px */
+  }
+
+  .subtext {
+    font-size: 20px; /* Down from 48px */
+    text-align: center;
+    padding: 0 20px;
+  }
+}
+
+/* Small mobile - very small phones */
+@media (max-width: 375px) {
+  .container {
+    font-size: 72px;
+  }
+
+  .loading {
+    font-size: 48px;
+  }
+
+  .subtext {
+    font-size: 16px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    font-size: 160px; /* Down from 288px */
+  }
+
+  .loading {
+    font-size: 80px;
+  }
+
+  .subtext {
+    font-size: 32px; /* Down from 48px */
+  }
+}
