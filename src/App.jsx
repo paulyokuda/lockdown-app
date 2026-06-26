@@ -1,20 +1,21 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
-const SUBTEXTS = [
-  "Should we stay in lockdown forever?",
-  "But it'd be pretty cool if it were",
-  "#tipofthespear",
-  "But did you finish your CJA?",
-  "But gateway to dominance",
-  "Unless…",
-  "Please",
-  "Back to work",
-  "But could be the move?",
-]
+const TARGET_DATE = new Date('2026-07-01T00:00:00').getTime();
+
+function getTimeRemaining() {
+  const now = Date.now();
+  const diff = Math.max(0, TARGET_DATE - now);
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  return { days, hours, minutes, seconds, expired: diff === 0 };
+}
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [time, setTime] = useState(getTimeRemaining);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,6 +27,15 @@ function App() {
     }
   }, [setIsLoading]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(getTimeRemaining());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const pad = (n) => String(n).padStart(2, '0');
+
   const renderContent = () => {
     if (isLoading) {
       return <div className="loading">🤔</div>;
@@ -33,8 +43,13 @@ function App() {
 
     return (
       <div className="content">
-        <div>NO</div>
-        <div className="subtext">{SUBTEXTS[Math.floor(Math.random() * SUBTEXTS.length)]}</div>
+        <div className="heading">The wait is almost over...</div>
+        <div className="countdown">
+          {time.days > 0 && <span className="time-segment">{time.days}<span className="time-label">d</span></span>}
+          <span className="time-segment">{pad(time.hours)}<span className="time-label">h</span></span>
+          <span className="time-segment">{pad(time.minutes)}<span className="time-label">m</span></span>
+          <span className="time-segment">{pad(time.seconds)}<span className="time-label">s</span></span>
+        </div>
       </div>
     );
   }

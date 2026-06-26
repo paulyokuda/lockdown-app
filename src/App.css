@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 288px;
+  font-size: 160px;
   font-weight: bold;
   text-align: center;
   overflow: hidden;
@@ -22,12 +22,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
   text-align: center;
 }
 
-.subtext {
-  font-size: 48px;
+.heading {
+  font-size: 0.4em;
+  font-weight: 400;
+  opacity: 0.6;
+  letter-spacing: 0.05em;
+}
+
+.countdown {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.time-segment {
+  font-variant-numeric: tabular-nums;
+}
+
+.time-label {
+  font-size: 0.35em;
+  opacity: 0.5;
+  margin-left: 4px;
 }
 
 .loading {
@@ -47,47 +66,37 @@
 /* Mobile styles - phones */
 @media (max-width: 640px) {
   .container {
-    font-size: 96px; /* Down from 288px */
+    font-size: 48px;
     padding: 20px;
   }
 
   .loading {
-    font-size: 64px; /* Down from 96px */
+    font-size: 64px;
   }
 
-  .subtext {
-    font-size: 20px; /* Down from 48px */
-    text-align: center;
-    padding: 0 20px;
+  .countdown {
+    gap: 8px;
   }
 }
 
 /* Small mobile - very small phones */
 @media (max-width: 375px) {
   .container {
-    font-size: 72px;
+    font-size: 36px;
   }
 
   .loading {
     font-size: 48px;
-  }
-
-  .subtext {
-    font-size: 16px;
   }
 }
 
 /* Tablets */
 @media (min-width: 641px) and (max-width: 1024px) {
   .container {
-    font-size: 160px; /* Down from 288px */
+    font-size: 100px;
   }
 
   .loading {
     font-size: 80px;
-  }
-
-  .subtext {
-    font-size: 32px; /* Down from 48px */
   }
 }
