@@ -33,6 +33,13 @@
   letter-spacing: 0.05em;
 }
 
+.expired-heading {
+  font-size: 0.7em;
+  color: #ffffff;
+  opacity: 1;
+  font-weight: bold;
+}
+
 .countdown {
   display: flex;
   align-items: baseline;

@@ -41,6 +41,14 @@ function App() {
       return <div className="loading">🤔</div>;
     }
 
+    if (time.expired) {
+      return (
+        <div className="content">
+          <div className="heading expired-heading">🧘 Yes 🧘</div>
+        </div>
+      );
+    }
+
     return (
       <div className="content">
         <div className="heading">The wait is almost over...</div>
